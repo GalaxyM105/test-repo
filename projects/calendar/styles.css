@@ -1,0 +1,197 @@
+/* RESET STYLES - Remove default browser margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding/border in element width/height */
+}
+
+/* BODY STYLES - Page background and layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient background */
+    min-height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Space around edges on small screens */
+}
+
+/* CONTAINER - Limits calendar width on large screens */
+.container {
+    width: 100%; /* Full width on small screens */
+    max-width: 500px; /* Maximum width on large screens */
+}
+
+/* CALENDAR - Main calendar container styling */
+.calendar {
+    background: white; /* White background for calendar */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Drop shadow for depth */
+    overflow: hidden; /* Hide any content that overflows */
+}
+
+/* HEADER - Top section with navigation and month/year display */
+.header {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space buttons away from title */
+    align-items: center; /* Vertically center content */
+    padding: 20px; /* Internal spacing */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient */
+    color: white; /* White text */
+}
+
+/* Header title - Month and year text */
+.header h1 {
+    font-size: 24px; /* Large text size */
+    min-width: 200px; /* Minimum width to prevent layout shift */
+    text-align: center; /* Center the text */
+}
+
+/* NAV BUTTONS - Previous/Next month navigation buttons */
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    border: 2px solid white; /* White border */
+    color: white; /* White text */
+    padding: 8px 12px; /* Internal spacing */
+    border-radius: 6px; /* Slightly rounded corners */
+    cursor: pointer; /* Shows clickable cursor */
+    font-size: 14px; /* Button text size */
+    font-weight: 600; /* Semi-bold text */
+    transition: all 0.3s ease; /* Smooth animation for hover effects */
+}
+
+/* Button hover state - Slight fade and scale up */
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3); /* More opaque white */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Button active/click state - Scale down briefly */
+.nav-btn:active {
+    transform: scale(0.95); /* Slightly shrink button */
+}
+
+/* WEEKDAYS ROW - Shows day column headers (Sun, Mon, etc.) */
+.weekdays {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(7, 1fr); /* 7 equal columns for the week */
+    gap: 0; /* No space between columns */
+    padding: 10px; /* Internal spacing */
+    background: #f5f5f5; /* Light gray background */
+}
+
+/* Individual weekday header cell (Sun, Mon, Tue, etc.) */
+.weekday {
+    text-align: center; /* Center the day names */
+    font-weight: 700; /* Bold text */
+    color: #667eea; /* Purple color */
+    padding: 10px; /* Internal spacing */
+    font-size: 12px; /* Smaller text size */
+}
+
+/* DAYS GRID - Container for all calendar day cells */
+.days {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(7, 1fr); /* 7 columns (one per day of week) */
+    gap: 0; /* No space between cells */
+    padding: 10px; /* Internal spacing */
+    min-height: 400px; /* Minimum height to prevent layout shift */
+}
+
+/* DAY CELL - Individual calendar date cells */
+.day {
+    aspect-ratio: 1; /* Square cells (width = height) */
+    display: flex; /* Flexbox for content centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    border: 1px solid #eee; /* Light gray border */
+    cursor: pointer; /* Clickable cursor */
+    border-radius: 6px; /* Rounded corners */
+    font-weight: 500; /* Medium-weight text */
+    transition: all 0.2s ease; /* Smooth animation for hover/click */
+    color: #333; /* Dark gray text */
+    min-height: 50px; /* Minimum cell height */
+}
+
+/* Day cell hover state - Highlight and enlarge on mouseover */
+.day:hover {
+    background: #f0f0f0; /* Light gray background */
+    transform: scale(1.05); /* Slightly enlarge cell */
+}
+
+/* Days from previous/next month - Faded appearance to show they're not in current month */
+.day.other-month {
+    color: #ccc; /* Light gray text */
+    background: #fafafa; /* Very light gray background */
+}
+
+/* Today's date - Highlighted with purple gradient */
+.day.today {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient */
+    color: white; /* White text for contrast */
+    font-weight: 700; /* Bold text */
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); /* Subtle shadow glow */
+}
+
+/* Today's date hover - Larger scale effect */
+.day.today:hover {
+    transform: scale(1.08); /* More pronounced enlargement */
+}
+
+/* FOOTER - Bottom section with "Today" button */
+.footer {
+    padding: 15px; /* Internal spacing */
+    text-align: center; /* Center the button */
+    background: #f9f9f9; /* Very light gray background */
+    border-top: 1px solid #eee; /* Separator line */
+}
+
+/* TODAY BUTTON - Jump to current date */
+.today-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Internal spacing */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Clickable cursor */
+    font-weight: 600; /* Semi-bold text */
+    transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* Today button hover state - Scale up and add shadow */
+.today-btn:hover {
+    transform: scale(1.05); /* Slightly enlarge */
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); /* Subtle shadow glow */
+}
+
+/* Today button active/click state - Scale down briefly */
+.today-btn:active {
+    transform: scale(0.95); /* Slightly shrink */
+}
+
+/* RESPONSIVE DESIGN - Adjustments for small screens (mobile devices) */
+@media (max-width: 480px) {
+    /* Stack header elements vertically on small screens */
+    .header {
+        flex-direction: column; /* Stack items vertically */
+        gap: 10px; /* Space between stacked items */
+    }
+    
+    /* Smaller header title on mobile */
+    .header h1 {
+        font-size: 20px; /* Smaller font */
+        min-width: auto; /* Remove width constraint */
+    }
+    
+    /* Smaller navigation buttons on mobile */
+    .nav-btn {
+        padding: 6px 10px; /* Reduce button size */
+        font-size: 12px; /* Smaller text */
+    }
+    
+    /* Smaller calendar cells on mobile */
+    .day {
+        min-height: 40px; /* Reduce cell height */
+        font-size: 14px; /* Smaller date text */
+    }
+}
