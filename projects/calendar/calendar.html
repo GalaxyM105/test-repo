@@ -1,0 +1,55 @@
+<!-- Calendar App - A simple web-based calendar for viewing past and future dates -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section: Contains metadata and links to external resources -->
+<head>
+    <!-- Character encoding for proper text display -->
+    <meta charset="UTF-8">
+    <!-- Responsive design: Makes the app work on mobile and desktop devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar App</title>
+    <!-- Link to external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Body section: Main content of the page -->
+<body>
+    <!-- Main container with 100% max-width for centered layout -->
+    <div class="container">
+        <!-- Calendar wrapper: Contains all calendar elements -->
+        <div class="calendar">
+            <!-- Header: Navigation and current month/year display -->
+            <div class="header">
+                <!-- Previous button: Click to go to the previous month -->
+                <button class="nav-btn" id="prevBtn">← Previous</button>
+                <!-- Month and year display: Updated dynamically by JavaScript -->
+                <h1 id="monthYear"></h1>
+                <!-- Next button: Click to go to the next month -->
+                <button class="nav-btn" id="nextBtn">Next →</button>
+            </div>
+            
+            <!-- Weekdays row: Shows the days of the week (Sun-Sat) -->
+            <div class="weekdays">
+                <div class="weekday">Sun</div>
+                <div class="weekday">Mon</div>
+                <div class="weekday">Tue</div>
+                <div class="weekday">Wed</div>
+                <div class="weekday">Thu</div>
+                <div class="weekday">Fri</div>
+                <div class="weekday">Sat</div>
+            </div>
+            
+            <!-- Days grid: Dynamically filled with day numbers by JavaScript -->
+            <div class="days" id="daysContainer"></div>
+            
+            <!-- Footer: Contains the "Today" button to return to current date -->
+            <div class="footer">
+                <!-- Today button: Click to jump back to today's date -->
+                <button id="todayBtn" class="today-btn">Today</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Link to external JavaScript file for calendar functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
