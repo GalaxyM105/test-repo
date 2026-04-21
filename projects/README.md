@@ -26,6 +26,23 @@ A simple web-based calendar application for viewing dates in the past and future
 
 ---
 
+### 🎮 Hangman
+A simple command-line Hangman game written in Python with 20 built-in tech/programming themed words.
+
+**How to run:**
+1. Navigate to the `hangman/` folder
+2. Run the game with:
+   ```bash
+   python hangman.py
+   ```
+
+**Files:**
+- `hangman.py` - Full game logic and ASCII art
+
+**Requirements:** Python 3.x (no external libraries needed)
+
+---
+
 ## Adding New Projects
 
 To add a new project:
